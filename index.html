@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAS Business Solutions Brochure</title>
+    <style>
+        :root {
+            --primary: #0F766E;
+            --primary-light: #14B8A6;
+            --secondary: #0EA5E9;
+            --light: #F0FDFA;
+            --dark: #134E4A;
+            --text: #334155;
+            --text-light: #94A3B8;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .brochure {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Cover Page */
+        .cover {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .cover h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .logo-container {
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 16px;
+            padding: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 2rem;
+        }
+        
+        /* Inside Pages */
+        .page {
+            padding: 3rem 2rem;
+            background-color: white;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-light);
+        }
+        
+        .summary {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .expertise-item {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .expertise-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Service Packages */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+        }
+        
+        .service-icon {
+            font-size: 1.8rem;
+            margin-right: 0.5rem;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-subtitle {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .service-body {
+            padding: 1.5rem;
+        }
+        
+        .deliverables-list {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .deliverables-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .investment-options {
+            margin-top: 1.5rem;
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        
+        .investment-options h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .investment-options ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .investment-options li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e5e7eb;
+        }
+        
+        .investment-options li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .case-study {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .case-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+        }
+        
+        .case-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .case-client {
+            font-style: italic;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-section {
+            margin-bottom: 1rem;
+        }
+        
+        .case-section h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            margin-top: 2rem;
+        }
+        
+        .testimonial {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(15, 118, 110, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            padding-left: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--dark);
+        }
+        
+        .testimonial-position {
+            color: var(--text-light);
+        }
+        
+        /* POC Methodology */
+        .process-flow {
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+        }
+        
+        .process-flow:before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background-color: var(--primary-light);
+            z-index: 1;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 10px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .step-desc {
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-detail {
+            margin: 0.5rem 0;
+        }
+        
+        .contact-label {
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .expertise-grid, .services-grid, .case-studies {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-flow:before {
+                display: none;
+            }
+            
+            .process-step {
+                margin-bottom: 2rem;
+            }
+            
+            .cover h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cover h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Cover Page -->
+        <section class="cover">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0" y="0" width="45" height="100" fill="#0F766E"/>
+                        <rect x="50" y="0" width="50" height="45" fill="#0F766E"/>
+                        <rect x="50" y="50" width="50" height="50" fill="#0F766E"/>
+                    </svg>
+                </div>
+            </div>
+            <h1>TAS Business Solutions, LLC</h1>
+            <h2>Medical Device Commercialization & Supply Chain Expertise</h2>
+            <p class="tagline">Driving growth, innovation & improving outcomes!</p>
+        </section>
+        
+        <!-- POC Methodology and Contact Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Our POC-Driven Methodology</h2>
+                <p style="margin-bottom: 2rem;">Our approach follows a proven Proof of Concept model that validates results before scaling:</p>
+                
+                <div class="process-flow">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <p class="step-title">ASSESSMENT</p>
+                        <p class="step-desc">Define current state & goals</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <p class="step-title">POC DESIGN</p>
+                        <p class="step-desc">Create targeted solution</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <p class="step-title">PILOT</p>
+                        <p class="step-desc">Execute with clear metrics</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <p class="step-title">EVALUATE</p>
+                        <p class="step-desc">Validate value & approach</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <p class="step-title">SCALE</p>
+                        <p class="step-desc">Deploy proven solution</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin: 3rem 0;">
+                    <p style="font-size: 1.2rem; font-style: italic; color: var(--primary);">Validate value before full investment</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Why Partner With TAS Business Solutions?</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">✅ Industry Expertise</h3>
+                        <p>Deep knowledge of medical device markets, supply chain dynamics, and sales strategy best practices across therapeutic areas</p>
+                    </div>
+                    
+                    <div style="background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">✅ Global Network</h3>
+                        <p>Established relationships with key distributors, healthcare providers, and industry opinion leaders in North America, Europe, and emerging markets</p>
+                    </div>
+                    
+                    <div style="background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">✅ Results-Driven Approach</h3>
+                        <p>Focus on measurable outcomes, revenue growth, and strategic impact with clear ROI metrics</p>
+                    </div>
+                    
+                    <div style="background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">✅ Flexible Engagement Models</h3>
+                        <p>Hourly, daily, or project-based consulting tailored to your specific needs and budget constraints</p>
+                    </div>
+                    
+                    <div style="background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="color: var(--dark); margin-bottom: 1rem;">✅ Client-Centric Philosophy</h3>
+                        <p>We succeed only when our clients succeed — your goals become our mission</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 3rem; background-color: var(--light); padding: 1.5rem; border-radius: 8px;">
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">Discount & Special Rate Policy</h3>
+                    <p style="margin-bottom: 1rem;">We offer strategic discounts based on commitment level and project scope:</p>
+                    <ol style="padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Long-Term Retainers:</strong> 10% discount for 6-month commitment</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Bulk Hourly Packages:</strong> 10% discount for 20+ hours prepaid</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Startups & Small Businesses:</strong> 10-15% discount on first engagement (case-by-case basis)</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Referral or Repeat Clients:</strong> 5-10% discount for returning clients or successful referrals</li>
+                        <li><strong>Non-Profit or Research Collaborations:</strong> Special rates available upon request</li>
+                    </ol>
+                    <p style="margin-top: 1rem; color: var(--text-light); font-style: italic;">* All rates are subject to change. Please contact us for current pricing.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Page -->
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p style="margin-bottom: 2rem;">Let's discuss how TAS Business Solutions can support your company's growth objectives. Schedule a complimentary 30-minute discovery call to explore potential collaboration.</p>
+            
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <span class="contact-label">Contact:</span>
+                    <span>Timothy Sharp</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Role:</span>
+                    <span>Business Consultant | Medical Device & Industrial Distribution Expert</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Email:</span>
+                    <span>sharptimal@gmail.com</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Phone:</span>
+                    <span>(405) 532-4525</span>
+                </div>
+                
+                <div class="contact-detail">
+                    <span class="contact-label">Location:</span>
+                    <span>Norman, OK (Flexible for Remote Work in USA, North America & EU)</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 1.2rem; font-weight: bold;">TAS Business Solutions has created millions in value for clients through strategic consulting and implementation.</p>
+        </section>
+        
+        <footer class="footer">
+            <p>TAS Business Solutions, LLC</p>
+            <p>Driving growth, innovation & improving outcomes since 2018</p>
+        </footer>
+        
+        <!-- Executive Summary Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Executive Summary</h2>
+                <p class="summary">
+                    With over 9 years of success accelerating medical device commercialization and optimizing supply chains, TAS Business Solutions delivers measurable results for manufacturers, distributors, and healthcare providers. Our expertise has generated <strong>$1.4M+</strong> in revenue growth for clients, achieved <strong>33% year-over-year sales increases</strong> in international markets for AFO product categories, and optimized distribution networks across EMEA, UK, MEA, and APAC regions. To date, TAS Business Solutions has created millions in value for its clients through strategic consulting services and data-driven approaches.
+                </p>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Revenue Growth Achievement</h3>
+                        <div style="background-color: var(--light); padding: 1rem; border-radius: 8px; height: 250px; display: flex; justify-content: center; align-items: center;">
+                            <svg width="100%" height="200" viewBox="0 0 500 250">
+                                <rect x="50" y="220" width="80" height="30" fill="#0F766E" />
+                                <rect x="150" y="180" width="80" height="70" fill="#0F766E" />
+                                <rect x="250" y="120" width="80" height="130" fill="#0F766E" />
+                                <rect x="350" y="70" width="80" height="180" fill="#0F766E" />
+                                
+                                <text x="90" y="240" text-anchor="middle" fill="#333" font-size="12">2020</text>
+                                <text x="190" y="240" text-anchor="middle" fill="#333" font-size="12">2021</text>
+                                <text x="290" y="240" text-anchor="middle" fill="#333" font-size="12">2022</text>
+                                <text x="390" y="240" text-anchor="middle" fill="#333" font-size="12">2023</text>
+                                
+                                <text x="90" y="210" text-anchor="middle" fill="white" font-size="14">$400K</text>
+                                <text x="190" y="170" text-anchor="middle" fill="white" font-size="14">$750K</text>
+                                <text x="290" y="110" text-anchor="middle" fill="white" font-size="14">$1.1M</text>
+                                <text x="390" y="60" text-anchor="middle" fill="white" font-size="14">$1.4M</text>
+                                
+                                <line x1="50" y1="220" x2="450" y2="220" stroke="#ccc" stroke-width="1" />
+                                <text x="40" y="220" text-anchor="end" font-size="12" fill="#666">$0</text>
+                                
+                                <line x1="50" y1="170" x2="450" y2="170" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                <text x="40" y="170" text-anchor="end" font-size="12" fill="#666">$500K</text>
+                                
+                                <line x1="50" y1="120" x2="450" y2="120" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                <text x="40" y="120" text-anchor="end" font-size="12" fill="#666">$1M</text>
+                                
+                                <line x1="50" y1="70" x2="450" y2="70" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                <text x="40" y="70" text-anchor="end" font-size="12" fill="#666">$1.5M</text>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">International Market Growth - AFO Products</h3>
+                        <div style="background-color: var(--light); padding: 1rem; border-radius: 8px; height: 250px; display: flex; justify-content: center; align-items: center;">
+                            <svg width="100%" height="200" viewBox="0 0 500 250">
+                                <line x1="50" y1="220" x2="450" y2="220" stroke="#ccc" stroke-width="1" />
+                                <line x1="50" y1="170" x2="450" y2="170" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                <line x1="50" y1="120" x2="450" y2="120" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                <line x1="50" y1="70" x2="450" y2="70" stroke="#ccc" stroke-width="1" stroke-dasharray="5,5" />
+                                
+                                <text x="40" y="220" text-anchor="end" font-size="12" fill="#666">100%</text>
+                                <text x="40" y="170" text-anchor="end" font-size="12" fill="#666">115%</text>
+                                <text x="40" y="120" text-anchor="end" font-size="12" fill="#666">125%</text>
+                                <text x="40" y="70" text-anchor="end" font-size="12" fill="#666">135%</text>
+                                
+                                <text x="100" y="240" text-anchor="middle" fill="#333" font-size="12">Q1</text>
+                                <text x="200" y="240" text-anchor="middle" fill="#333" font-size="12">Q2</text>
+                                <text x="300" y="240" text-anchor="middle" fill="#333" font-size="12">Q3</text>
+                                <text x="400" y="240" text-anchor="middle" fill="#333" font-size="12">Q4</text>
+                                
+                                <polyline 
+                                    points="100,220 200,185 300,150 400,105" 
+                                    fill="none" 
+                                    stroke="#0F766E" 
+                                    stroke-width="3" 
+                                />
+                                
+                                <circle cx="100" cy="220" r="6" fill="#0F766E" />
+                                <circle cx="200" cy="185" r="6" fill="#0F766E" />
+                                <circle cx="300" cy="150" r="6" fill="#0F766E" />
+                                <circle cx="400" cy="105" r="6" fill="#0F766E" />
+                                
+                                <polyline 
+                                    points="100,220 400,220" 
+                                    fill="none" 
+                                    stroke="#94A3B8" 
+                                    stroke-width="2" 
+                                    stroke-dasharray="5,5"
+                                />
+                                
+                                <text x="400" y="105" text-anchor="end" font-size="14" fill="#0F766E" font-weight="bold">33% growth</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Our Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <h3>Go-to-Market Strategy</h3>
+                        <p>Product launches, distribution networks, and regulatory navigation</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Business Development</h3>
+                        <p>Sales strategy, partnerships, and market entry planning</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Supply Chain & Logistics</h3>
+                        <p>Optimization, vendor negotiations, and distribution channel management</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>Reimbursement & Market Access</h3>
+                        <p>Pathway identification and strategic alignment</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>KOL Engagement & Training</h3>
+                        <p>Physician adoption, clinical advocacy, and training programs</p>
+                    </div>
+                    
+                    <div class="expertise-item">
+                        <h3>International Expansion</h3>
+                        <p>Market assessment, regulatory considerations, and partnerships</p>
+                    </div>
+                </div>
+                
+                <div class="testimonials" style="margin-top: 3rem;">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem;">Client Testimonials</h3>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"As General Manager and Executive Vice-President of MD Orthopaedics, Inc, working with Timothy Sharp was a true pleasure! He was a key player in driving the success of the business. I highly recommend Timothy for any future endeavors and am grateful for the time we spent working together."</p>
+                        <div>
+                            <p class="testimonial-author">Luke J. Mitchell</p>
+                            <p class="testimonial-position">General Manager & Executive Vice President, MD Orthopaedics, Inc</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"As Vice President of OPSB, I have seen firsthand Timothy's contributions to our organization and his unwavering dedication to our cause. Quite simply, he cares, which is an invaluable trait to possess in this role."</p>
+                        <div>
+                            <p class="testimonial-author">Mark Monahan</p>
+                            <p class="testimonial-position">Vice President Global Sales, OPSB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Timothy's expertise in business management has been an integral ingredient with the overall success of the IPV Generation II contract. Timothy's knowledge has assisted not only our internal and external customers, but has added expertise with our employees on this contract. His multi-lingual language skills have helped with some of our staff members."</p>
+                        <div>
+                            <p class="testimonial-author">Terry A. Boich</p>
+                            <p class="testimonial-position">Lockheed Martin Field Team Operations Manager, IPV Program</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Service Packages Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Service Packages & Investment</h2>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">📊 Strategy Consultation</h3>
+                            <p class="service-subtitle">Ideal for companies exploring market entry or optimizing operations</p>
+                        </div>
+                        <div class="service-body">
+                            <div>
+                                <h4>Deliverables:</h4>
+                                <ul class="deliverables-list">
+                                    <li>Comprehensive market analysis report</li>
+                                    <li>Competitive positioning assessment</li>
+                                    <li>Strategic recommendations with clear ROI targets</li>
+                                    <li>Actionable implementation plan with timeline</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="investment-options">
+                                <h4>Investment Options:</h4>
+                                <ul>
+                                    <li><strong>Hourly Rate:</strong> $300/hour (Min. 5-hour engagement)</li>
+                                    <li><strong>Monthly Retainer:</strong> $12,000 per month (Min. 3 months)</li>
+                                    <li><strong>Extended Retainer Discount:</strong> 10% off for 6-month commitment ($10,800/month)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">📈 Business Development</h3>
+                            <p class="service-subtitle">For companies seeking sales growth, partnerships, or distributor engagement</p>
+                        </div>
+                        <div class="service-body">
+                            <div>
+                                <h4>Deliverables:</h4>
+                                <ul class="deliverables-list">
+                                    <li>Detailed sales strategy with growth projections</li>
+                                    <li>Target account pipeline development</li>
+                                    <li>Distributor identification and outreach</li>
+                                    <li>Direct sales support and negotiation assistance</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="investment-options">
+                                <h4>Investment Options:</h4>
+                                <ul>
+                                    <li><strong>Daily Rate:</strong> $2,500/day (Min. 3-day engagement)</li>
+                                    <li><strong>Success Fee Structure:</strong> Base rate + performance commission (negotiable)</li>
+                                    <li><strong>Package Discount:</strong> 10% off for 10-day package ($2,250/day)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">🌐 Market Expansion</h3>
+                            <p class="service-subtitle">For companies entering new regions, navigating compliance, or optimizing distribution</p>
+                        </div>
+                        <div class="service-body">
+                            <div>
+                                <h4>Deliverables:</h4>
+                                <ul class="deliverables-list">
+                                    <li>Target market assessment with opportunity sizing</li>
+                                    <li>Regulatory pathway guidance and compliance strategy</li>
+                                    <li>Distribution channel optimization plan</li>
+                                    <li>Market entry roadmap with timeline</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="investment-options">
+                                <h4>Investment Options:</h4>
+                                <ul>
+                                    <li><strong>Hourly Rate:</strong> $300/hour (Min. 10-hour engagement)</li>
+                                    <li><strong>Project-Based:</strong> Custom pricing based on scope and complexity</li>
+                                    <li><strong>Package Discount:</strong> 10% off for 20-hour package ($270/hour)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3 class="service-title">👨‍⚕️ KOL & Training Programs</h3>
+                            <p class="service-subtitle">For companies needing physician engagement, clinical training, or advocacy programs</p>
+                        </div>
+                        <div class="service-body">
+                            <div>
+                                <h4>Deliverables:</h4>
+                                <ul class="deliverables-list">
+                                    <li>Comprehensive KOL mapping and influence assessment</li>
+                                    <li>Structured engagement plan with outreach templates</li>
+                                    <li>Professional training materials and presentation decks</li>
+                                    <li>Program effectiveness measurement tools</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="investment-options">
+                                <h4>Investment Options:</h4>
+                                <ul>
+                                    <li><strong>Per Session:</strong> $3,500/session (Half-day or full-day formats available)</li>
+                                    <li><strong>Multi-Session Program:</strong> Custom pricing with volume discounts</li>
+                                    <li><strong>Package Discount:</strong> 10% off for multi-session engagements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1.5rem; background-color: var(--light); border-radius: 8px;">
+                    <h3 style="color: var(--dark); margin-bottom: 1rem;">🔍 Custom Consulting Engagements</h3>
+                    <p style="margin-bottom: 1rem;"><em>Tailored solutions based on your unique business challenges</em></p>
+                    <ul style="padding-left: 1.5rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Project-Based Pricing:</strong> Available upon request following discovery call</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Special Rates:</strong> Available for non-profits, research groups, or public health initiatives</li>
+                        <li><strong>Mixed-Model Approach:</strong> Combine hourly, daily, and success-based fees for optimal alignment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Case Studies Page -->
+        <section class="page">
+            <div class="section">
+                <h2 class="section-title">Client Success Stories</h2>
+                
+                <div class="case-studies">
+                    <div class="case-study">
+                        <div class="case-header">
+                            <h3 class="case-title">International Market Growth</h3>
+                            <p class="case-client">Medical Device Manufacturer - AFO Product Category</p>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-section">
+                                <h4>Challenge:</h4>
+                                <p>Global leader in Ponseti Method clubfoot orthoses needed to expand distribution network and drive international sales growth across EMEA markets for their AFO (Ankle-Foot Orthosis) product category</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Solution:</h4>
+                                <p>Implemented comprehensive market access strategies, established strategic distributor partnerships, and developed region-specific pricing models aligned with regulatory requirements</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Results:</h4>
+                                <p>Achieved 33% year-over-year sales growth in key international markets; built sustainable, long-term distributor relationships that increased market stability</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <div class="case-header">
+                            <h3 class="case-title">Revenue Growth Strategy</h3>
+                            <p class="case-client">Medical Device & Orthopedic Products</p>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-section">
+                                <h4>Challenge:</h4>
+                                <p>Company needed to optimize sales and distribution strategies to drive sustainable growth</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Solution:</h4>
+                                <p>Developed data-driven sales forecasting models, implemented business intelligence dashboards for KPI monitoring, and conducted detailed market assessments (TAM, SAM, SOM)</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Results:</h4>
+                                <p>Generated over $1.4M in revenue growth through optimized go-to-market strategy and enhanced distributor engagement</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-study">
+                        <div class="case-header">
+                            <h3 class="case-title">Supply Chain Optimization</h3>
+                            <p class="case-client">Military Procurement & Logistics</p>
+                        </div>
+                        <div class="case-content">
+                            <div class="case-section">
+                                <h4>Challenge:</h4>
+                                <p>Inefficient inventory management and procurement processes leading to operational delays</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Solution:</h4>
+                                <p>Managed $15M+ in military procurement; analyzed inventory tracking and implemented process improvements</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>Results:</h4>
+                                <p>Developed data-driven procurement strategies that reduced operational inefficiencies and improved inventory forecasting, minimizing shortages and delays</p>
+                            </div>
+                        </div>
